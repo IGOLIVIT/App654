@@ -20,7 +20,6 @@ struct LoadingView: View {
                 Image("Llogo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 220)
             }
             .padding()
             
