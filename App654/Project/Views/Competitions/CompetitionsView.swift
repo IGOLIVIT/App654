@@ -20,15 +20,33 @@ struct CompetitionsView: View {
             
             VStack {
                 
-                Text("Competitions")
-                    .foregroundColor(.white)
-                    .font(.system(size: 29, weight: .bold))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Image("11")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .cornerRadius(35)
+                    .overlay(
+                        
+                        VStack {
+                            
+                            Text("Competitions")
+                                .foregroundColor(.white)
+                                .font(.system(size: 34, weight: .bold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(10)
+                            
+                            Spacer()
+                        }
+                        
+                )
                     .padding(.bottom)
+
                 
                 if viewModel.events.isEmpty {
                     
                     VStack(spacing: 20) {
+                        
+                        Image("kubok")
                         
                         Text("Empty")
                             .foregroundColor(.white)
@@ -146,11 +164,21 @@ struct CompetitionsView: View {
                     
                 }, label: {
                     
-                    Image(systemName: "plus")
-                        .foregroundColor(.black)
-                        .font(.system(size: 16, weight: .regular))
-                        .padding()
-                        .background(Circle().fill(Color("prim")))
+                    HStack {
+                        
+                        Image(systemName: "plus")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16, weight: .regular))
+                     
+                        Text("Add event")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16, weight: .regular))
+                        
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(RoundedRectangle(cornerRadius: 20.0).fill(Color("prim")))
                 })
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }

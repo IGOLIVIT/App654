@@ -23,7 +23,7 @@ struct SettingsView: View {
                 
                 Text("Settings")
                     .foregroundColor(.white)
-                    .font(.system(size: 29, weight: .bold))
+                    .font(.system(size: 34, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom)
                 
@@ -57,8 +57,9 @@ struct SettingsView: View {
                                 
                                 Spacer()
                                 
-                                Image(systemName: "arrow.up.right")
-                                    .foregroundColor(.white.opacity(0.3))
+                                Image("kubok")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
                                     .padding(10)
                                     .background(Circle().fill(.white.opacity(0.05)))
                             }
@@ -90,8 +91,9 @@ struct SettingsView: View {
                                 
                                 Spacer()
                                 
-                                Image(systemName: "arrow.up.right")
-                                    .foregroundColor(.white.opacity(0.3))
+                                Image("kubok")
+                                    .resizable()
+                                    .frame(width: 30, height: 30)
                                     .padding(10)
                                     .background(Circle().fill(.white.opacity(0.05)))
                             }
@@ -99,43 +101,7 @@ struct SettingsView: View {
                             .frame(maxWidth: .infinity)
                             .background(RoundedRectangle(cornerRadius: 30).fill(Color("bg2")))
                         })
-                        
-                        Button(action: {
-                            
-                            withAnimation(.spring()) {
-                                
-                                isDelete = true
-                            }
-                            
-                        }, label: {
-                            
-                            HStack {
-                                
-                                HStack {
-                                    
-                                    Image(systemName: "trash.fill")
-                                        .foregroundColor(Color.red)
-                                        .font(.system(size: 16, weight: .regular))
-                                    
-                                    Text("Delete data")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 15, weight: .medium))
-                                    
-                                }
-                                .padding(.horizontal)
-                                
-                                Spacer()
-                                
-                                Image(systemName: "trash")
-                                    .foregroundColor(.red)
-                                    .font(.system(size: 13, weight: .regular))
-                                    .padding(10)
-                                    .background(Circle().fill(.red.opacity(0.05)))
-                            }
-                            .padding(10)
-                            .frame(maxWidth: .infinity)
-                            .background(RoundedRectangle(cornerRadius: 30).fill(Color("bg2")))
-                        })
+
                     }
                 }
             }

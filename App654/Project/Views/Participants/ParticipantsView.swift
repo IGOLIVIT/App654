@@ -20,15 +20,34 @@ struct ParticipantsView: View {
             
             VStack {
                 
-                Text("Participants")
-                    .foregroundColor(.white)
-                    .font(.system(size: 29, weight: .bold))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                Image("12")
+                    .resizable()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .cornerRadius(35)
+                    .overlay(
+                        
+                        VStack {
+                            
+                            Text("Participants")
+                                .foregroundColor(.white)
+                                .font(.system(size: 34, weight: .bold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(10)
+                            
+                            Spacer()
+                        }
+                        
+                )
                     .padding(.bottom)
-                
+
                 if viewModel.participantss.isEmpty {
                     
                     VStack(spacing: 20) {
+                        
+                        Image(systemName: "figure.walk")
+                            .foregroundColor(.white)
+                            .font(.system(size: 28, weight: .medium))
                         
                         Text("Empty")
                             .foregroundColor(.white)
@@ -106,11 +125,21 @@ struct ParticipantsView: View {
                     
                 }, label: {
                     
-                    Image(systemName: "plus")
-                        .foregroundColor(.black)
-                        .font(.system(size: 16, weight: .regular))
-                        .padding()
-                        .background(Circle().fill(Color("prim")))
+                    HStack {
+                        
+                        Image(systemName: "plus")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16, weight: .regular))
+                     
+                        Text("Add participant")
+                            .foregroundColor(.black)
+                            .font(.system(size: 16, weight: .regular))
+                        
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .background(RoundedRectangle(cornerRadius: 20.0).fill(Color("prim")))
                 })
                 .frame(maxWidth: .infinity, alignment: .trailing)
             }
