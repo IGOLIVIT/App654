@@ -181,6 +181,7 @@ struct CompetitionsView: View {
                     .background(RoundedRectangle(cornerRadius: 20.0).fill(Color("prim")))
                 })
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.bottom, 50)
             }
             .padding()
         }

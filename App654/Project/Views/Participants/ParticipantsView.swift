@@ -142,6 +142,8 @@ struct ParticipantsView: View {
                     .background(RoundedRectangle(cornerRadius: 20.0).fill(Color("prim")))
                 })
                 .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.bottom, 60)
+
             }
             .padding()
         }
